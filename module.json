@@ -1,7 +1,7 @@
 {
     "name": "fabulae-gm-helper",
     "title": "Fabulae GM Helper",
-    "description": "Un module d'aide au MJ pour générer des idées de rencontres, des défis, et des PNJ.",
+    "description": "This module assists Game Masters with encounter ideas, challenges, and NPC generation.",
     "version": "1.0.0",
     "author": "Sabbas",
     "systems": [],
