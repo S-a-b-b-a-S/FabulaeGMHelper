@@ -1,0 +1,16 @@
+{
+    "name": "fabulae-gm-helper",
+    "title": "Fabulae GM Helper",
+    "description": "Un module d'aide au MJ pour générer des idées de rencontres, des défis, et des PNJ.",
+    "version": "1.0.0",
+    "author": "Sabbas",
+    "systems": [],
+    "esmodules": ["module.js"],
+    "styles": ["style.css"],
+    "packs": [],
+    "languages": [],
+    "url": "https://github.com/S-a-b-b-a-S/FabulaeGMHelper",
+    "manifest": "https://raw.githubusercontent.com/S-a-b-b-a-S/FabulaeGMHelper/main/module.json",
+    "download": "https://github.com/S-a-b-b-a-S/FabulaeGMHelper/archive/main.zip"
+  }
+  
