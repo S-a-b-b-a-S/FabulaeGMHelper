@@ -54,7 +54,7 @@ Hooks.once("ready", () => {
     if (sidebar) {
         const button = document.createElement("button");
         button.textContent = "Fabulae GM Helper";
-        button.style.margin = "10px";
+        button.classList.add("fabulae-gm-helper-button");
         button.onclick = () => {
             new FabulaeGMHelper().render(true);
         };
@@ -64,6 +64,7 @@ Hooks.once("ready", () => {
         console.error("Fabulae GM Helper | Sidebar not found!");
     }
 });
+
 
 // Add a button to open the window
 //Hooks.on("renderSidebarTab", (app, html) => {

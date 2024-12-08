@@ -25,3 +25,17 @@ body {
 .tab-content.active {
     display: block;
 }
+.fabulae-gm-helper-button {
+    padding: 5px 10px;
+    font-size: 14px;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+.fabulae-gm-helper-button:hover {
+    background-color: #45a049;
+}
+
