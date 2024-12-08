@@ -1,10 +1,18 @@
 {
     "id": "fabulae-gm-helper",
-    "name": "fabulae-gm-helper",
     "title": "Fabulae GM Helper",
-    "description": "This module assists Game Masters with encounter ideas, challenges, and NPC generation.",
     "version": "1.0.0",
-    "author": "Sabbas",
+    "compatibility": {
+        "minimum": "12",
+        "verified": "12"
+    },
+    "authors": [
+        {
+            "name": "Sabbas",
+            "email": "yann.artho@gmail.com",
+            "discord": "Sabbas"
+        }
+    ],
     "systems": [],
     "esmodules": ["module.js"],
     "styles": ["style.css"],
