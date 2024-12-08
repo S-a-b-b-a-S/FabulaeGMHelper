@@ -20,4 +20,45 @@ Hooks.on("chatMessage", (chatLog, messageText, chatData) => {
         return false; // Empêche le message original de s'afficher
     }
 });
+class FabulaeGMHelper extends Application {
+    static get defaultOptions() {
+        return mergeObject(super.defaultOptions, {
+            id: "fabulae-gm-helper",
+            title: "Fabulae GM Helper",
+            template: "modules/fabulae-gm-helper/interface.html",
+            width: 400,
+            height: 300
+        });
+    }
+
+    activateListeners(html) {
+        super.activateListeners(html);
+
+        // Handle tab switching
+        html.find(".tab-button").on("click", (event) => {
+            const targetTab = event.currentTarget.dataset.tab;
+            html.find(".tab-content").removeClass("active");
+            html.find(`#${targetTab}`).addClass("active");
+        });
+
+        // Example: Generate encounter
+        html.find("#generate-encounter").on("click", () => {
+            const encounter = "A mysterious figure approaches the party.";
+            html.find("#encounter-result").text(encounter);
+        });
+    }
+}
+
+// Add a button to open the window
+Hooks.on("renderSidebarTab", (app, html) => {
+    if (app.options.id === "chat") {
+        const button = $(
+            `<button class="fabulae-gm-helper-button">Fabulae GM Helper</button>`
+        );
+        button.on("click", () => {
+            new FabulaeGMHelper().render(true);
+        });
+        html.find(".directory-footer").append(button);
+    }
+});
 

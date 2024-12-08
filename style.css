@@ -4,3 +4,24 @@
 body {
     font-family: Arial, sans-serif;
 }
+.fabulae-gm-helper {
+    padding: 10px;
+}
+
+.tabs {
+    margin-bottom: 10px;
+}
+
+.tab-button {
+    margin-right: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
