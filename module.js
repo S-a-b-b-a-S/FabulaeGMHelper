@@ -48,17 +48,33 @@ class FabulaeGMHelper extends Application {
         });
     }
 }
-
-// Add a button to open the window
-Hooks.on("renderSidebarTab", (app, html) => {
-    if (app.options.id === "chat") {
-        const button = $(
-            `<button class="fabulae-gm-helper-button">Fabulae GM Helper</button>`
-        );
-        button.on("click", () => {
+Hooks.once("ready", () => {
+    console.log("Fabulae GM Helper | Hook ready triggered...");
+    const sidebar = document.querySelector("#sidebar");
+    if (sidebar) {
+        const button = document.createElement("button");
+        button.textContent = "Fabulae GM Helper";
+        button.style.margin = "10px";
+        button.onclick = () => {
             new FabulaeGMHelper().render(true);
-        });
-        html.find(".directory-footer").append(button);
+        };
+        sidebar.appendChild(button);
+        console.log("Fabulae GM Helper | Button added to sidebar.");
+    } else {
+        console.error("Fabulae GM Helper | Sidebar not found!");
     }
 });
+
+// Add a button to open the window
+//Hooks.on("renderSidebarTab", (app, html) => {
+    //if (app.options.id === "chat") {
+      //  const button = $(
+        //    `<button class="fabulae-gm-helper-button">Fabulae GM Helper</button>`
+       // );
+       // button.on("click", () => {
+       //     new FabulaeGMHelper().render(true);
+       // });
+       // html.find(".directory-footer").append(button);
+   // }
+//});
 
