@@ -26,16 +26,18 @@ body {
     display: block;
 }
 .fabulae-gm-helper-button {
-    padding: 5px 10px;
-    font-size: 14px;
-    cursor: pointer;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
+    display: inline-block; /* Ne prend que la place nécessaire */
+    padding: 5px 10px; /* Taille intérieure du bouton */
+    font-size: 14px; /* Taille du texte */
+    cursor: pointer; /* Curseur pour indiquer que c'est cliquable */
+    background-color: #4CAF50; /* Couleur de fond */
+    color: white; /* Couleur du texte */
+    border: none; /* Pas de bordure */
+    border-radius: 5px; /* Coins arrondis */
+    margin: 5px auto; /* Centré horizontalement avec un espace */
 }
 
 .fabulae-gm-helper-button:hover {
-    background-color: #45a049;
+    background-color: #45a049; /* Couleur au survol */
 }
 
