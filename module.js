@@ -50,18 +50,23 @@ class FabulaeGMHelper extends Application {
 }
 Hooks.once("ready", () => {
     console.log("Fabulae GM Helper | Hook ready triggered...");
-    const sidebar = document.querySelector("#sidebar");
-    if (sidebar) {
+    const footer = document.querySelector(".directory-footer");
+    if (footer) {
+        const container = document.createElement("div");
+        container.style.textAlign = "center"; // Centre le bouton dans son conteneur
+
         const button = document.createElement("button");
         button.textContent = "Fabulae GM Helper";
         button.classList.add("fabulae-gm-helper-button");
         button.onclick = () => {
             new FabulaeGMHelper().render(true);
         };
-        sidebar.appendChild(button);
-        console.log("Fabulae GM Helper | Button added to sidebar.");
+
+        container.appendChild(button);
+        footer.appendChild(container);
+        console.log("Fabulae GM Helper | Button added to directory footer.");
     } else {
-        console.error("Fabulae GM Helper | Sidebar not found!");
+        console.error("Fabulae GM Helper | Directory footer not found!");
     }
 });
 
