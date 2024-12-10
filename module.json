@@ -1,7 +1,7 @@
 {
     "id": "fabulae-gm-helper",
     "title": "Fabulae GM Helper",
-    "version": "1.0.9",
+    "version": "1.0.10",
     "compatibility": {
         "minimum": "12",
         "verified": "12"

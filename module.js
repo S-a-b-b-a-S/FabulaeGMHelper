@@ -48,37 +48,46 @@ class FabulaeGMHelper extends Application {
         });
     }
 }
-Hooks.on("renderChatLog", (app, html, data) => {
-    console.log("Fabulae GM Helper | Adding button next to dice icon...");
+Hooks.once("ready", () => {
+    console.log("Fabulae GM Helper | Waiting for chat controls...");
 
-    // Trouver la barre de contrôle du chat
-    const chatControls = html[0].querySelector(".chat-controls.flexrow");
-    if (chatControls) {
-        // Créer un nouveau bouton
-        const button = document.createElement("button");
-        button.classList.add("fabulae-gm-helper-button");
-        button.title = "Open Fabulae GM Helper"; // Tooltip au survol
+    // Fonction pour vérifier si l'élément chat-controls est disponible
+    const waitForChatControls = () => {
+        const chatControls = document.querySelector("#chat-controls");
+        if (chatControls) {
+            console.log("Fabulae GM Helper | Chat controls found!");
 
-        // Ajouter une image dans le bouton
-        const img = document.createElement("img");
-        img.src = "modules/FabulaeGMHelper/assets/icon.png"; // Modifie ce chemin pour l'image
-        img.alt = "Fabulae GM Helper";
-        img.style.width = "24px"; // Taille de l'image
-        img.style.height = "24px";
+            // Créer un nouveau bouton
+            const button = document.createElement("button");
+            button.classList.add("fabulae-gm-helper-button");
+            button.title = "Open Fabulae GM Helper"; // Tooltip au survol
 
-        button.appendChild(img);
+            // Ajouter une image dans le bouton
+            const img = document.createElement("img");
+            img.src = "modules/FabulaeGMHelper/assets/icon.png"; // Modifie ce chemin pour l'image
+            img.alt = "Fabulae GM Helper";
+            img.style.width = "24px"; // Taille de l'image
+            img.style.height = "24px";
 
-        // Action au clic
-        button.onclick = () => {
-            new FabulaeGMHelper().render(true);
-        };
+            button.appendChild(img);
 
-        // Insérer le bouton avant le bouton du dé
-        const diceButton = chatControls.querySelector(".fa-dice-d20").parentElement;
-        chatControls.insertBefore(button, diceButton);
+            // Action au clic
+            button.onclick = () => {
+                new FabulaeGMHelper().render(true);
+            };
 
-        console.log("Fabulae GM Helper | Button added next to dice icon.");
-    } else {
-        console.error("Fabulae GM Helper | Chat controls not found!");
-    }
+            // Insérer le bouton avant le bouton du dé
+            const diceButton = chatControls.querySelector(".fa-dice-d20").parentElement;
+            chatControls.insertBefore(button, diceButton);
+
+            console.log("Fabulae GM Helper | Button added next to dice icon.");
+        } else {
+            // Réessayer après 100ms si l'élément n'est pas encore disponible
+            setTimeout(waitForChatControls, 100);
+        }
+    };
+
+    // Lancer la vérification
+    waitForChatControls();
 });
+
