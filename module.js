@@ -27,7 +27,7 @@ class FabulaeGMHelper extends Application {
             title: "Fabulae GM Helper",
             template: "modules/fabulae-gm-helper/interface.html",
             width: 400,
-            height: 300
+            height: 600
         });
     }
 
@@ -64,7 +64,7 @@ Hooks.once("ready", () => {
 
             // Ajouter une image dans le bouton
             const img = document.createElement("img");
-            img.src = "modules/FabulaeGMHelper/assets/icon.png"; // Modifie ce chemin pour l'image
+            img.src = "modules/Fabulae-gm-helper/assets/icon.png"; // Modifie ce chemin pour l'image
             img.alt = "Fabulae GM Helper";
             img.style.width = "24px"; // Taille de l'image
             img.style.height = "24px";

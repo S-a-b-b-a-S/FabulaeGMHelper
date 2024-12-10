@@ -1,14 +1,14 @@
 {
     "id": "fabulae-gm-helper",
     "title": "Fabulae GM Helper",
-    "version": "1.0.11",
+    "version": "1.0.12",
     "compatibility": {
         "minimum": "12",
         "verified": "12"
     },
     "authors": [
         {
-            "name": "Sabbas",
+            "name": "Sabbas <yann.artho@gmail.com>",
             "email": "yann.artho@gmail.com",
             "discord": "Sabbas"
         }
