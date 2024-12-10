@@ -49,39 +49,37 @@ class FabulaeGMHelper extends Application {
     }
 }
 Hooks.once("ready", () => {
-    console.log("Fabulae GM Helper | Adding button...");
-    const footer = document.querySelector(".directory-footer");
-    if (footer) {
-        console.log("Fabulae GM Helper | Directory footer found.");
-        const container = document.createElement("div");
-        container.style.textAlign = "center";
+    console.log("Fabulae GM Helper | Adding button next to dice icon...");
 
+    // Trouver la barre de contrôle du chat
+    const chatControls = document.querySelector(".chat-controls.flexrow");
+    if (chatControls) {
+        // Créer un nouveau bouton
         const button = document.createElement("button");
-        button.textContent = "Fabulae GM Helper";
         button.classList.add("fabulae-gm-helper-button");
+        button.title = "Open Fabulae GM Helper"; // Tooltip au survol
+
+        // Ajouter une image dans le bouton
+        const img = document.createElement("img");
+        img.src = "modules/FabulaeGMHelper/assets/icon.png"; // Modifie ce chemin pour l'image
+        img.alt = "Fabulae GM Helper";
+        img.style.width = "24px"; // Taille de l'image
+        img.style.height = "24px";
+
+        button.appendChild(img);
+
+        // Action au clic
         button.onclick = () => {
             new FabulaeGMHelper().render(true);
         };
 
-        container.appendChild(button);
-        footer.appendChild(container);
-        console.log("Fabulae GM Helper | Button added.");
+        // Insérer le bouton avant le bouton du dé
+        const diceButton = chatControls.querySelector(".fa-dice-d20").parentElement;
+        chatControls.insertBefore(button, diceButton);
+
+        console.log("Fabulae GM Helper | Button added next to dice icon.");
     } else {
-        console.error("Fabulae GM Helper | Directory footer not found!");
+        console.error("Fabulae GM Helper | Chat controls not found!");
     }
 });
-
-
-// Add a button to open the window
-//Hooks.on("renderSidebarTab", (app, html) => {
-    //if (app.options.id === "chat") {
-      //  const button = $(
-        //    `<button class="fabulae-gm-helper-button">Fabulae GM Helper</button>`
-       // );
-       // button.on("click", () => {
-       //     new FabulaeGMHelper().render(true);
-       // });
-       // html.find(".directory-footer").append(button);
-   // }
-//});
 

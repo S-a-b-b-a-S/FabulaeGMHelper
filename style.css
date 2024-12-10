@@ -1,9 +1,33 @@
 /* Fabulae GM Helper - Stylesheet */
-/* Add custom styles for the module here. */
 
+/* Global styles for the module */
 body {
     font-family: Arial, sans-serif;
+    padding: 10px;
 }
+
+/* Styling for the custom button added near the dice icon */
+.fabulae-gm-helper-button {
+    background: none;
+    border: none;
+    padding: 0;
+    margin-right: 5px; /* Space to the right of the button */
+    cursor: pointer;
+}
+
+.fabulae-gm-helper-button img {
+    display: block;
+    width: 24px; /* Icon width */
+    height: 24px; /* Icon height */
+    border-radius: 50%; /* Rounded icon style */
+    transition: transform 0.2s; /* Smooth zoom effect */
+}
+
+.fabulae-gm-helper-button:hover img {
+    transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
+/* Styling for the window added by the module */
 .fabulae-gm-helper {
     padding: 10px;
 }
@@ -25,19 +49,3 @@ body {
 .tab-content.active {
     display: block;
 }
-.fabulae-gm-helper-button {
-    display: inline-block; /* Ne prend que la place nécessaire */
-    padding: 5px 10px; /* Taille intérieure du bouton */
-    font-size: 14px; /* Taille du texte */
-    cursor: pointer; /* Curseur pour indiquer que c'est cliquable */
-    background-color: #4CAF50; /* Couleur de fond */
-    color: white; /* Couleur du texte */
-    border: none; /* Pas de bordure */
-    border-radius: 5px; /* Coins arrondis */
-    margin: 5px auto; /* Centré horizontalement avec un espace */
-}
-
-.fabulae-gm-helper-button:hover {
-    background-color: #45a049; /* Couleur au survol */
-}
-
