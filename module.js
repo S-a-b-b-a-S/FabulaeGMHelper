@@ -48,11 +48,11 @@ class FabulaeGMHelper extends Application {
         });
     }
 }
-Hooks.once("ready", () => {
+Hooks.on("renderChatLog", (app, html, data) => {
     console.log("Fabulae GM Helper | Adding button next to dice icon...");
 
     // Trouver la barre de contrôle du chat
-    const chatControls = document.querySelector(".chat-controls.flexrow");
+    const chatControls = html[0].querySelector(".chat-controls.flexrow");
     if (chatControls) {
         // Créer un nouveau bouton
         const button = document.createElement("button");
@@ -82,4 +82,3 @@ Hooks.once("ready", () => {
         console.error("Fabulae GM Helper | Chat controls not found!");
     }
 });
-
