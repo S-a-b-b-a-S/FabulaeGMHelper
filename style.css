@@ -11,19 +11,19 @@ body {
     background: none;
     border: none;
     padding: 0;
-    margin-right: 5px; /* Espace à droite pour espacer */
-    width: 28px; /* Largeur fixe */
-    height: 28px; /* Hauteur fixe */
+    margin: 0;
+    width: 28px !important; /* Largeur fixe forcée */
+    height: 28px !important; /* Hauteur fixe forcée */
     cursor: pointer;
     display: flex;
-    align-items: center; /* Centrer verticalement */
-    justify-content: center; /* Centrer horizontalement */
+    align-items: center; /* Centre verticalement */
+    justify-content: center; /* Centre horizontalement */
+    box-sizing: border-box; /* Inclut padding et bordures dans les dimensions */
 }
 
 .fabulae-gm-helper-button img {
     width: 24px; /* Icon width */
     height: 24px; /* Icon height */
-    border-radius: 50%; /* Rounded icon style */
     transition: transform 0.2s; /* Smooth zoom effect */
 }
 
